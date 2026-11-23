@@ -7,6 +7,7 @@ import numpy as np
 import pandas as pd
 import plotly.express as px
 import streamlit as st
+import xgboost as xgb
 
 st.set_page_config(page_title="Sri Lanka Car Price Predictor", page_icon="🚗", layout="wide")
 
@@ -15,6 +16,12 @@ st.set_page_config(page_title="Sri Lanka Car Price Predictor", page_icon="🚗",
 @st.cache_resource
 def load_model():
     model = joblib.load("artifacts/model.pkl")
+
+    # Put the XGBoost part back in (saved separately in portable JSON format)
+    booster = xgb.Booster()
+    booster.load_model("artifacts/xgb_part.json")
+    model.named_estimators_["xgboost"]._Booster = booster
+
     info = joblib.load("artifacts/model_info.pkl")
     return model, info
 
