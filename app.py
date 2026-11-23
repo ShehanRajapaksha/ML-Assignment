@@ -63,7 +63,7 @@ def prepare_input(car):
 
 # ---------- Sidebar ----------
 with st.sidebar:
-    st.title("About")
+    st.title("About", anchor=False)
     st.write("Predicts the listed price of a used car in Sri Lanka using **ensemble learning** "
              "(bagging, boosting, stacking and hybrid models).")
     st.write("**Data:** ~9,500 car listings from **ikman.lk** and **Riyasewana.com** (Dec 2024 – Feb 2025).")
@@ -83,7 +83,7 @@ tab1, tab2, tab3 = st.tabs(["💰 Price Predictor", "📊 Model Comparison", "�
 # TAB 1: Price Predictor
 # =====================================================================
 with tab1:
-    st.subheader("Enter the car details")
+    st.subheader("Enter the car details", anchor=False)
 
     col1, col2, col3 = st.columns(3)
 
@@ -133,7 +133,7 @@ with tab1:
 # TAB 2: Model Comparison
 # =====================================================================
 with tab2:
-    st.subheader("How did each model perform on unseen cars?")
+    st.subheader("How did each model perform on unseen cars?", anchor=False)
 
     best = results.iloc[0]
     c1, c2, c3 = st.columns(3)
@@ -177,7 +177,7 @@ with tab2:
 # TAB 3: Insights
 # =====================================================================
 with tab3:
-    st.subheader("What drives used-car prices in Sri Lanka?")
+    st.subheader("What drives used-car prices in Sri Lanka?", anchor=False)
 
     fig3 = px.bar(importance.sort_values("importance"), x="importance", y=importance.columns[0],
                   orientation="h", title="Feature importance (XGBoost)")
