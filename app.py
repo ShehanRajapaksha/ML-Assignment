@@ -63,7 +63,7 @@ def prepare_input(car):
 
 # ---------- Sidebar ----------
 with st.sidebar:
-    st.title("🚗 About")
+    st.title("About")
     st.write("Predicts the listed price of a used car in Sri Lanka using **ensemble learning** "
              "(bagging, boosting, stacking and hybrid models).")
     st.write("**Data:** ~9,500 car listings from **ikman.lk** and **Riyasewana.com** (Dec 2024 – Feb 2025).")
