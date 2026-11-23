@@ -1,0 +1,5 @@
+Model,MAE (lakhs),MAPE (%),R2 test
+ARIMA only (market median),25.999,73.329,-0.057
+Random Forest only,5.18,12.729,0.906
+RF + ARIMA (as feature),5.278,12.942,0.903
+RF + ARIMA (residual hybrid),5.359,13.015,0.903
