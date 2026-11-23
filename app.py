@@ -11,6 +11,15 @@ import xgboost as xgb
 
 st.set_page_config(page_title="Sri Lanka Car Price Predictor", page_icon="🚗", layout="wide")
 
+# Hide Streamlit's Deploy button and top-right menu.
+st.markdown("""
+<style>
+[data-testid="stToolbar"] {
+    visibility: hidden;
+}
+</style>
+""", unsafe_allow_html=True)
+
 
 # ---------- Load the model and saved files (cached so it loads only once) ----------
 @st.cache_resource
