@@ -75,7 +75,7 @@ with st.sidebar:
     st.caption("⚠️ Code generated with assistance from Claude (Anthropic).")
 
 
-st.title("Sri Lankan Used Car Price Predictor")
+st.title("Sri Lankan Used Car Price Predictor" , anchor=False)
 tab1, tab2, tab3 = st.tabs(["💰 Price Predictor", "📊 Model Comparison", "🔍 Insights"])
 
 
